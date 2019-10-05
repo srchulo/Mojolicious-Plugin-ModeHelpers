@@ -1,6 +1,7 @@
 Revision history for Mojolicious-Plugin-ModeHelpers
 
 {{$NEXT}}
+        - Fix Test::POD requirement to Test::Pod.
 
 0.03  2019-10-05 15:34:43 CDT
         - Require Test::POD for older failing perls.
