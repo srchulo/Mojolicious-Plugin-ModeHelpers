@@ -44,7 +44,8 @@
       "test" : {
          "requires" : {
             "Test::Exception" : "0",
-            "Test::More" : "0.96"
+            "Test::More" : "0.96",
+            "Test::POD" : "0"
          }
       }
    },
@@ -60,7 +61,7 @@
          "web" : "https://github.com/srchulo/Mojolicious-Plugin-ModeHelpers"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_contributors" : [
       "Adam Hopkins <violapiratejunky@gmail.com>"
    ],
