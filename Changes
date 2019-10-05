@@ -1,6 +1,8 @@
 Revision history for Mojolicious-Plugin-ModeHelpers
 
 {{$NEXT}}
+
+0.02  2019-10-05 15:31:10 CDT
         - Fix indentation in documentation.
 
 0.01  2019-10-05 15:22:34 CDT

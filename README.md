@@ -51,9 +51,9 @@ Mojolicious::Plugin::ModeHelpers - Mojolicious Plugin that adds helpers to deter
 
     # use Mojolicious helper dot notation
     plugin ModeHelpers => {
-        prod_helper_name => 'modes.prod',
-        dev_helper_name => 'modes.dev',
-        modes => [{ 'modes.alpha' => 'alpha' }]
+      prod_helper_name => 'modes.prod',
+      dev_helper_name => 'modes.dev',
+      modes => [{ 'modes.alpha' => 'alpha' }]
     };
 
     if (app->modes->prod) { # true if app->mode eq 'production'
@@ -80,7 +80,7 @@ is often more compact. You may use the built-in ["in\_prod"](#in_prod) and ["in\
 Returns true if ["mode" in Mojolicious](https://metacpan.org/pod/Mojolicious#mode) is `production`. Otherwise, returns false.
 
     if (app->in_prod) { # true if app->mode eq 'production'
-        # do prod stuff
+      # do prod stuff
     }
 
 ["in\_prod"](#in_prod) can be renamed via ["prod\_helper\_name"](#prod_helper_name).
@@ -90,7 +90,7 @@ Returns true if ["mode" in Mojolicious](https://metacpan.org/pod/Mojolicious#mod
 Returns true if ["mode" in Mojolicious](https://metacpan.org/pod/Mojolicious#mode) does not equal `production`. Otherwise, returns false.
 
     if (app->in_dev) { # true if app->mode ne 'production'
-        # do dev stuff
+      # do dev stuff
     }
 
 ["in\_dev"](#in_dev) can be renamed via ["dev\_helper\_name"](#dev_helper_name).
@@ -111,7 +111,7 @@ Register plugin in [Mojolicious](https://metacpan.org/pod/Mojolicious) applicati
     plugin ModeHelpers => { prod_helper_name => 'in_production_mode' };
 
     if (app->in_production_mode) { # true if app->mode eq 'production'
-        # do prod stuff
+      # do prod stuff
     }
 
 You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolicious#helper) dot notation:
@@ -119,7 +119,7 @@ You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolici
     plugin ModeHelpers => { prod_helper_name => 'modes.prod' };
 
     if (app->modes->prod) {
-        # do prod stuff
+      # do prod stuff
     }
 
 ## dev\_helper\_name
@@ -129,7 +129,7 @@ You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolici
     plugin ModeHelpers => { dev_helper_name => 'in_development_mode' };
 
     if (app->in_development_mode) { # true if app->mode ne 'production'
-        # do dev stuff
+      # do dev stuff
     }
 
 You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolicious#helper) dot notation:
@@ -137,7 +137,7 @@ You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolici
     plugin ModeHelpers => { dev_helper_name => 'modes.dev' };
 
     if (app->modes->dev) {
-        # do dev stuff
+      # do dev stuff
     }
 
 ## mode
@@ -147,19 +147,19 @@ if ["mode" in Mojolicious](https://metacpan.org/pod/Mojolicious#mode) equals the
 a key-value pair of helper\_name => mode.
 
     plugin ModeHelpers => {
-        modes => [
-            'alpha', # generates helper in_alpha for mode 'alpha'
-            { in_beta_mode => 'beta' }, # generates helper in_beta_mode for mode 'beta'
-            'my strange mode!', # generates helper in_my_strange_mode for mode 'my strange mode!'
-        ],
+      modes => [
+        'alpha', # generates helper in_alpha for mode 'alpha'
+        { in_beta_mode => 'beta' }, # generates helper in_beta_mode for mode 'beta'
+        'my strange mode!', # generates helper in_my_strange_mode for mode 'my strange mode!'
+      ],
     };
 
     if (app->in_alpha) { # true if app->mode eq 'alpha'
-        # do alpha stuff
+      # do alpha stuff
     } elsif (app->in_beta_mode) { # true if app->mode eq 'beta'
-        # do beta stuff
+      # do beta stuff
     } elsif (app->in_my_strange_mode) { # true if app->mode eq 'my strange mode!'
-        # do strange things
+      # do strange things
     }
 
 ### SCALAR
@@ -173,9 +173,9 @@ Non-empty strings can be passed into ["modes"](#modes). The helper name is gener
     plugin ModeHelpers => { modes => ['alpha', 'my strange mode!'] };
 
     if (app->in_alpha) { # true if app->mode eq 'alpha'
-        # do alpha stuff
+      # do alpha stuff
     } elsif (app->in_my_strange_mode) { # true if app->mode eq 'my strange mode!'
-        # do strange things
+      # do strange things
     }
 
 ### HASH
@@ -185,7 +185,7 @@ A key-value pair can be provided as a hash, where the key is the helper name and
     plugin ModeHelpers => { modes => [ { in_alpha_mode => 'alpha' } ] };
 
     if (app->in_alpha_mode) { # true if app->mode eq 'alpha'
-        # do alpha stuff
+      # do alpha stuff
     }
 
 You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolicious#helper) dot notation:
@@ -193,7 +193,7 @@ You can also use the ["helper" in Mojolicious](https://metacpan.org/pod/Mojolici
     plugin ModeHelpers => { modes => [ { 'modes.alpha' => 'alpha' } ] };
 
     if (app->modes->alpha) { # true if app->mode eq 'alpha'
-        # do alpha stuff
+      # do alpha stuff
     }
 
 # AUTHOR
