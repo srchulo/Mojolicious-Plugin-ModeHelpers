@@ -3,7 +3,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Carp       ();
 use Mojo::Util ();
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub register {
 	my (undef, $app, $config) = @_;
