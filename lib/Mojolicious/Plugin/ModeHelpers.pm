@@ -117,9 +117,9 @@ Mojolicious::Plugin::ModeHelpers - Mojolicious Plugin that adds helpers to deter
 
   # use Mojolicious helper dot notation
   plugin ModeHelpers => {
-      prod_helper_name => 'modes.prod',
-      dev_helper_name => 'modes.dev',
-      modes => [{ 'modes.alpha' => 'alpha' }]
+    prod_helper_name => 'modes.prod',
+    dev_helper_name => 'modes.dev',
+    modes => [{ 'modes.alpha' => 'alpha' }]
   };
 
   if (app->modes->prod) { # true if app->mode eq 'production'
@@ -146,7 +146,7 @@ is often more compact. You may use the built-in L</in_prod> and L</in_dev> metho
 Returns true if L<Mojolicious/mode> is C<production>. Otherwise, returns false.
 
   if (app->in_prod) { # true if app->mode eq 'production'
-      # do prod stuff
+    # do prod stuff
   }
 
 L</in_prod> can be renamed via L</prod_helper_name>.
@@ -156,7 +156,7 @@ L</in_prod> can be renamed via L</prod_helper_name>.
 Returns true if L<Mojolicious/mode> does not equal C<production>. Otherwise, returns false.
 
   if (app->in_dev) { # true if app->mode ne 'production'
-      # do dev stuff
+    # do dev stuff
   }
 
 L</in_dev> can be renamed via L</dev_helper_name>.
@@ -177,7 +177,7 @@ L</prod_helper_name> allows you to change the name of the L</in_prod> helper:
   plugin ModeHelpers => { prod_helper_name => 'in_production_mode' };
 
   if (app->in_production_mode) { # true if app->mode eq 'production'
-      # do prod stuff
+    # do prod stuff
   }
 
 You can also use the L<Mojolicious/helper> dot notation:
@@ -185,7 +185,7 @@ You can also use the L<Mojolicious/helper> dot notation:
   plugin ModeHelpers => { prod_helper_name => 'modes.prod' };
 
   if (app->modes->prod) {
-      # do prod stuff
+    # do prod stuff
   }
 
 =head2 dev_helper_name
@@ -195,7 +195,7 @@ L</dev_helper_name> allows you to change the name of the L</in_dev> helper:
   plugin ModeHelpers => { dev_helper_name => 'in_development_mode' };
 
   if (app->in_development_mode) { # true if app->mode ne 'production'
-      # do dev stuff
+    # do dev stuff
   }
 
 You can also use the L<Mojolicious/helper> dot notation:
@@ -203,7 +203,7 @@ You can also use the L<Mojolicious/helper> dot notation:
   plugin ModeHelpers => { dev_helper_name => 'modes.dev' };
 
   if (app->modes->dev) {
-      # do dev stuff
+    # do dev stuff
   }
 
 =head2 mode
@@ -213,19 +213,19 @@ if L<Mojolicious/mode> equals their mode. Modes can either be a non-empty scalar
 a key-value pair of helper_name => mode.
 
   plugin ModeHelpers => {
-      modes => [
-          'alpha', # generates helper in_alpha for mode 'alpha'
-          { in_beta_mode => 'beta' }, # generates helper in_beta_mode for mode 'beta'
-          'my strange mode!', # generates helper in_my_strange_mode for mode 'my strange mode!'
-      ],
+    modes => [
+      'alpha', # generates helper in_alpha for mode 'alpha'
+      { in_beta_mode => 'beta' }, # generates helper in_beta_mode for mode 'beta'
+      'my strange mode!', # generates helper in_my_strange_mode for mode 'my strange mode!'
+    ],
   };
 
   if (app->in_alpha) { # true if app->mode eq 'alpha'
-      # do alpha stuff
+    # do alpha stuff
   } elsif (app->in_beta_mode) { # true if app->mode eq 'beta'
-      # do beta stuff
+    # do beta stuff
   } elsif (app->in_my_strange_mode) { # true if app->mode eq 'my strange mode!'
-      # do strange things
+    # do strange things
   }
 
 =head3 SCALAR
@@ -251,9 +251,9 @@ Append the resulting value to the string "in_".
   plugin ModeHelpers => { modes => ['alpha', 'my strange mode!'] };
 
   if (app->in_alpha) { # true if app->mode eq 'alpha'
-      # do alpha stuff
+    # do alpha stuff
   } elsif (app->in_my_strange_mode) { # true if app->mode eq 'my strange mode!'
-      # do strange things
+    # do strange things
   }
 
 =head3 HASH
@@ -263,7 +263,7 @@ A key-value pair can be provided as a hash, where the key is the helper name and
   plugin ModeHelpers => { modes => [ { in_alpha_mode => 'alpha' } ] };
 
   if (app->in_alpha_mode) { # true if app->mode eq 'alpha'
-      # do alpha stuff
+    # do alpha stuff
   }
 
 You can also use the L<Mojolicious/helper> dot notation:
@@ -271,7 +271,7 @@ You can also use the L<Mojolicious/helper> dot notation:
   plugin ModeHelpers => { modes => [ { 'modes.alpha' => 'alpha' } ] };
 
   if (app->modes->alpha) { # true if app->mode eq 'alpha'
-      # do alpha stuff
+    # do alpha stuff
   }
 
 =head1 AUTHOR
